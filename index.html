@@ -4,31 +4,25 @@
     <title>Question Page</title>
 </head>
 <body>
+    <h2>Question:</h2>
+    <p>What is the full form of AI?</p>
 
-    <div id="question-section">
-        <h2>What is the full form of AI?</h2>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
 
-        <input type="text" id="answer" placeholder="Enter your answer">
-        <button onclick="checkAnswer()">Submit</button>
-    </div>
-
-    <div id="clue-section" style="display:none;">
-        <h2>Clue</h2>
-        <p>Great! You got the correct answer.<br>HINT</p>
-    </div>
+    <p id="feedback" style="color:red;"></p>
 
     <script>
         function checkAnswer() {
-            let ans = document.getElementById("answer").value.trim();
-
-            if (ans === "Artificial Intelligence") {
-                document.getElementById("question-section").style.display = "none";
-                document.getElementById("clue-section").style.display = "block";
+            const userAnswer = document.getElementById('answer').value.trim();
+            if(userAnswer === "Artificial Intelligence") {
+                // Redirect to the clue page
+                window.location.href = "clue 1.html";
             } else {
-                alert("Wrong answer! Try again.");
+                document.getElementById('feedback').innerText = "Wrong answer! Try again.";
             }
         }
     </script>
-
 </body>
 </html>
+
